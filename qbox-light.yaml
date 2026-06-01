@@ -13,29 +13,29 @@ tasks:
     dest: ./tmp/qbox
 
   - action: move_path
-    src: ./tmp/qbox/server.cfg
+    src: ./tmp/qbox/configs/server.cfg
     dest: ./server.cfg
 
   - action: move_path
-    src: ./tmp/qbox/permissions.cfg
+    src: ./tmp/qbox/configs/permissions.cfg
     dest: ./permissions.cfg
 
   - action: move_path
-    src: ./tmp/qbox/ox.cfg
+    src: ./tmp/qbox/configs/ox.cfg
     dest: ./ox.cfg
 
   - action: move_path
-    src: ./tmp/qbox/voice.cfg
+    src: ./tmp/qbox/configs/voice.cfg
     dest: ./voice.cfg
 
   - action: move_path
-    src: ./tmp/qbox/misc.cfg
+    src: ./tmp/qbox/configs/misc.cfg
     dest: ./misc.cfg
 
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/qbox/qbox.sql
+    file: ./tmp/qbox/data/qbox.sql
 
   # STANDALONE
   - action: download_github
@@ -119,7 +119,7 @@ tasks:
     src: ./tmp/ox_inventory.zip
 
   - action: move_path
-    src: ./tmp/qbox/items.lua
+    src: ./tmp/qbox/data/items.lua
     dest: ./resources/[ox]/ox_inventory/data/items.lua
     overwrite: true
 
